@@ -55,7 +55,7 @@ button:hover:before {
 
     background: rgba(199, 55, 134, 0.744);
     /* background: linear-gradient(to right, red, white, red); */
-    filter: url("#wave");
+    filter: url(#wave);
 }
 @keyframes squish {
     0% {
