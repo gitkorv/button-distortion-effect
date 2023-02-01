@@ -1,0 +1,65 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+.container {
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    /* background-color: aqua; */
+}
+button {
+    font-family: Impact;
+    position: relative;
+    width: 250px;
+    height: 80px;
+    border-radius: 10px;
+    background: none;
+    border: violet;
+    outline: none;
+    font-size: 40px;
+    color: white;
+}
+button::before {
+    content: '';
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    /* filter: url("#wave"); */
+
+}
+button:hover {
+    animation: squish 0.5s;
+}
+button:hover:before {
+    background: red;
+    /* background: linear-gradient(to right, red, white, red); */
+    filter: url("#wave");
+}
+@keyframes squish {
+    0% {
+        transform: scaleY(1);
+    }
+    60% {
+        transform: scaleY(1.5);
+    }
+    80% {
+        transform: scaley(0.9);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+
+}
