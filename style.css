@@ -1,8 +1,13 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
+    /* border: 1px solid red; */
+}
+
+body {
+    border: none;
+}
 .container {
     width: 100dvw;
     height: 100dvh;
@@ -14,7 +19,8 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
-    /* background-color: aqua; */
+    background-color: aqua;
+    z-index: -10;
 }
 button {
     font-family: Impact;
@@ -30,7 +36,9 @@ button {
 }
 button::before {
     content: '';
-    background-color: black;
+    /* padding-top: 10px; */
+    background-color: rgba(199, 55, 134, 0.744);
+    color: aqua;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -44,7 +52,8 @@ button:hover {
     animation: squish 0.5s;
 }
 button:hover:before {
-    background: red;
+
+    background: rgba(199, 55, 134, 0.744);
     /* background: linear-gradient(to right, red, white, red); */
     filter: url("#wave");
 }
@@ -53,13 +62,19 @@ button:hover:before {
         transform: scaleY(1);
     }
     60% {
-        transform: scaleY(1.5);
+        transform: scaleY(1.2);
     }
     80% {
-        transform: scaley(0.9);
+        transform: scaleY(0.9);
     }
     100% {
         transform: scaleY(1);
     }
 
 }
+
+/* svg {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+} */

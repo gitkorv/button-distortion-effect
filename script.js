@@ -7,30 +7,31 @@ let verticalFrequency = 0.00001;
 let horizontalFrequency = 0.00001;
 let displacementScale = 30;
 
-turbulence.setAttribute('baseFrequency', `${verticalFrequency} ${horizontalFrequency}` )
-const steps = 30;
-const interval = 50;
+turbulence.setAttribute('baseFrequency', `${verticalFrequency} ${horizontalFrequency}`);
+
+const steps = 10;
+const interval = 25;
 
 displacement.setAttribute('scale', displacementScale)
 
-buttons.forEach(function(button){
-    button.addEventListener('mouseover', function(){
+buttons.forEach(function (button) {
+    button.addEventListener('mouseover', function () {
         verticalFrequency = 0.00001;
         horizontalFrequency = 0.00001;
-        for (i = 0; i < steps; i++){
-            setTimeout(function(){
-                verticalFrequency += 0.002;
+        for (i = 0; i < steps; i++) {
+            setTimeout(function () {
+                verticalFrequency += 0.005;
                 horizontalFrequency += 0.00001;
 
-                turbulence.setAttribute('baseFrequency', `${verticalFrequency} ${horizontalFrequency}` )
+                turbulence.setAttribute('baseFrequency', `${verticalFrequency} ${horizontalFrequency}`)
             }, i * interval)
-        }
-        setTimeout(function(){
+        };
+        setTimeout(function () {
             verticalFrequency = 0.00001;
             horizontalFrequency = 0.00001;
 
-            turbulence.setAttribute('baseFrequency', `${verticalFrequency} ${horizontalFrequency}` )
+            turbulence.setAttribute('baseFrequency', `${verticalFrequency} ${horizontalFrequency}`)
 
         }, steps * interval)
     })
-})
+});
